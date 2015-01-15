@@ -21,4 +21,14 @@ Set up your Item class (don't forget to inherit from from ActiveRecord::Base) an
 
 Don't forget to run the migration too! Type `rake -T` into your terminal if you need a reminder on what the command to migrate is.
 
-Step 6 - 
+Step 6 - Let's add some swag to our database! Boot up `tux` in your terminal and create some new items. Here are some images links that you can use:
+
+```html
++ hat: https://s3.amazonaws.com/after-school-assets/flatiron-swag-store-lab/flatiron_hat.jpg
++ hoodie: https://s3.amazonaws.com/after-school-assets/flatiron-swag-store-lab/flatiron_hoodie.jpg
++ men's tee: https://s3.amazonaws.com/after-school-assets/flatiron-swag-store-lab/flatiron_tee_m.jpg
++ women's tee: https://s3.amazonaws.com/after-school-assets/flatiron-swag-store-lab/flatiron_tee_w.jpg
++ tote: https://s3.amazonaws.com/after-school-assets/flatiron-swag-store-lab/flatiron_tote.jpg
+```
+
+
