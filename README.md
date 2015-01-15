@@ -31,18 +31,19 @@ Step 6 - Let's add some swag to our database! Boot up `tux` in your terminal and
 
 You can set your own price and decide the count that you have in stock.
 
-Step 7 - We've got the M covered, now let's move onto the V. In your views directory create an `items.erb` file that will display all of the merch for our store - including each items name, photo and price.
+Step 7 - We've got the M covered, now let's move onto the V. In your views directory create an `items.erb` file that will display all of the merch for our store - including each item's name, photo and price.
 
-Step 8 - Set up your `get '/items'` route to pulls all of your items from the database and display them in your new `items.erb` template.
+Step 8 - Set up your `get '/items'` route to pull all of your items from the database and display them in your new `items.erb` template.
 
 Take a look at that swag!
 
 ## Bonus Challenges
 + Add an inventory page that displays the count for each item.
 + Set up a User model (with attributes for name, email and password) and a sign up and sign in page.
-+ Set up a Purchase model that will track user's purchases. This table will have two columns - user_id and item_id. Tables like this are called join tables because they connect objects from other models/tables.
-  * You'll also need to set up new ActiveRecord relationships for each model. The purchase model belongs to users and items. Users and items both have many purchases (this may seem a little strange but just roll with it).
-  * Set up a form that lists all the items and allows user's to chose how many of each item that they would like to order. Hint: There is a `type="number"` attribute for form inputs. Google it! 
++ Set up a Purchase model that will track user's purchases. This table will have two columns - user_id and item_id. Tables like this are called join tables because they connect (or join) objects from other models/tables.
+  * You'll also need to set up new ActiveRecord relationships for each model. The purchase model belongs to users and items. The user and item models both have many purchases (this may seem a little strange but just roll with it).
+  * Set up a form that lists all the items and allows users to chose how many of each item that they would like to order. Hint: There is a `type="number"` attribute for form inputs. Google it! 
   * When the form is submitted, set up your controller to add a new entry in the Purchases table and decrease the items' count.
-  * If you've set up your `has_many` and `belongs_to` relationships properly you should also be able to get a list of everything a user has purchased from the store with a command like `@user.purchases`.
+  * If you've set up your `has_many` and `belongs_to` relationships properly you should also be able to get a list of everything a user has purchased from the store with `@user.purchases`.
+  * Welcome to the world of eCommerce!
 
