@@ -7,12 +7,18 @@
   </head>
   <body> 
     <div class="container">
-      <h1>Welcome to Flatiron Swag Store!</h1>
+      <h1>Welcome to the Flatiron Swag Store!</h1>
 
+      <% if signed_in? %>
+        <p><%= current_user.name %></a> | <a href="/sign-out">Sign Out</a></p>
+      <% elsif !@signin_page %>
+        <a href="/sign-in">Sign In</a>
+      <% end %>
+      
       <%= yield %>
 
       <div class="footer">
-        <h4><a href="/items">Items</a></h4>
+        <h4><a href="/items">Items</a> | <a href="/">Home</a></h4>
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
