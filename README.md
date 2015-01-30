@@ -17,7 +17,7 @@ Step 3 - Set up your public directory with directories for css, img and js.
 
 Step 4 - Set up your config.ru, Gemfile and Rakefile (totally okay to copy from Fwitter again!)
 
-Step 5 - Now for the MVC. In the infamous words of Yeezy, it's all about the models. We'll start off with one model/table for Items with the following attributes/columns:
+Step 5 - Now for the MVC. In the words of Yeezy, it's all about the models. We'll start off with one model/table for Items with the following attributes/columns:
 
 ```ruby
 :name
@@ -32,11 +32,11 @@ Don't forget to run the migration too! Type `rake -T` into your terminal if you 
 
 Step 6 - Let's add some items to our database! Boot up `tux` in your terminal and create some new items. Here are some images links that you can use:
 
-+ hat: https://s3.amazonaws.com/after-school-assets/flatiron-swag-store-lab/flatiron_hat.jpg
-+ hoodie: https://s3.amazonaws.com/after-school-assets/flatiron-swag-store-lab/flatiron_hoodie.jpg
-+ men's tee: https://s3.amazonaws.com/after-school-assets/flatiron-swag-store-lab/flatiron_tee_m.jpg
-+ women's tee: https://s3.amazonaws.com/after-school-assets/flatiron-swag-store-lab/flatiron_tee_w.jpg
-+ tote: https://s3.amazonaws.com/after-school-assets/flatiron-swag-store-lab/flatiron_tote.jpg
++ [hat](https://s3.amazonaws.com/after-school-assets/flatiron-swag-store-lab/flatiron_hat.jpg
++ [hoodie](https://s3.amazonaws.com/after-school-assets/flatiron-swag-store-lab/flatiron_hoodie.jpg)
++ [men's tee](https://s3.amazonaws.com/after-school-assets/flatiron-swag-store-lab/flatiron_tee_m.jpg)
++ [women's tee](https://s3.amazonaws.com/after-school-assets/flatiron-swag-store-lab/flatiron_tee_w.jpg)
++ [tote](https://s3.amazonaws.com/after-school-assets/flatiron-swag-store-lab/flatiron_tote.jpg)
 
 You can set your own price and decide the count that you have in stock.
 
@@ -49,10 +49,11 @@ Take a look at that swag!
 ## Bonus Challenges
 + Add an inventory page that displays the count for each item.
 + Set up a User model (with attributes for name and email) and a sign up page.
-+ Set up a Purchase model that will track user's purchases. This table will have two columns - user_id and item_id. Tables like this are called join tables because they connect (or join) objects from other models/tables.
-  * You'll also need to set up new ActiveRecord relationships for each model. The Purchase model belongs to users and items. The User and Item models both have many purchases (this may seem a little strange but just roll with it).
-  * Set up a form that lists all the items and allows users to chose how many of each item they would like to order. Hint: There is a `type="number"` attribute for form inputs. Google it! 
-  * When the form is submitted, set up your controller to add a new entry in the Purchases table and decrease each items' count.
-  * If you've set up your `has_many` and `belongs_to` relationships properly you should also be able to get a list of everything a user has purchased from the store with `@user.purchases`.
-  * Welcome to the world of eCommerce!
++ Set up a form that lists all the items and allows users to chose how many of each item they would like to order. Hint: There is a `type="number"` attribute for form inputs. Google it! 
+  * When the form is submitted, the items' inventory (count) should decrease and a new entry should be created in a Purchases table. More on that below!
++ Set up a Purchase model that will track user's purchases. 
+  * This table will have two columns - user_id and item_id. Tables like this are called join tables because they connect (or join) objects from other models/tables.
+  * You'll also need to set up new ActiveRecord relationships for each model. The Purchase model `belongs_to` users and items. The User and Item models both `has_many` purchases. This may seem a little strange but just roll with it.
+  * If you set up your `has_many` and `belongs_to` relationships properly you'll be able to get a list of everything a user has purchased from the store with something like `@user.purchases`.
++ Welcome to the wonderful world of eCommerce!
 
