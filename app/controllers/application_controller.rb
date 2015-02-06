@@ -60,6 +60,15 @@ class ApplicationController < Sinatra::Base
     redirect '/items'
   end
 
+  post '/sign-up' do
+    @user = User.find_by(:email => params[:email], :name => params[:name])
+    if !@user
+      User.create(:email => params[:email], :name => params[:name])
+    end
+    session[:user_id] = @user.id
+    redirect '/items'
+  end
+
   get '/sign-out' do
     session[:user_id] = nil
     session[:error] = nil
