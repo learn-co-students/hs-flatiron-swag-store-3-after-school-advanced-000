@@ -7,7 +7,7 @@ type: challenges
 
 ## Flatiron Swag Shop Part 3
 
-If you've already done the Flatiron Swag Shop labs 1 and 2, go straight the challengs at the bottom. Otherwise, follow the steps below to get started.
+If you've already done the Flatiron Swag Shop labs 1 and 2, go straight the challenges at the bottom. Otherwise, follow the steps below to get started.
 
 **Step 1** - Set up your app and MVC directories.
 
@@ -21,7 +21,7 @@ If you've already done the Flatiron Swag Shop labs 1 and 2, go straight the chal
 
 ```ruby
 :name
-:image_url 
+:image_url
 :price
 :count
 ```
@@ -47,9 +47,9 @@ Take a look at that swag!
 ## Challenges
 + Add an inventory page that displays the count for each item.
 + Set up a User model (with attributes for name and email) and a sign up page.
-+ Set up a form that lists all the items and allows users to chose how many of each item they would like to order. Hint: There is a `type="number"` attribute for form inputs. Google it! 
++ Set up a form that lists all the items and allows users to chose how many of each item they would like to order. Hint: There is a `type="number"` attribute for form inputs. Google it!
   * When the form is submitted, the items' inventory (count) should decrease and a new entry should be created in a Purchases table. More on that below!
-+ Set up a Purchase model that will track user's purchases. 
++ Set up a Purchase model that will track user's purchases.
   * This table will have two columns - user_id and item_id. Tables like this are called join tables because they connect (or join) objects from other models/tables.
   * You'll also need to set up new ActiveRecord relationships for each model. The Purchase model `belongs_to` users and items. The User and Item models both `has_many` purchases. This may seem a little strange but just roll with it.
   * If you set up your `has_many` and `belongs_to` relationships properly you'll be able to get a list of everything a user has purchased from the store with something like `@user.purchases`.
