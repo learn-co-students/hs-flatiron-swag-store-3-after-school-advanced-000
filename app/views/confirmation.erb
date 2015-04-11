@@ -3,5 +3,6 @@
 
 <h3>Your purchases</h3>
 <% @user.purchases.each_with_index do |purchase, index| %>
-  <p><%= purchase.item.name %></p>
+  <p><%= index + 1 %>. <%= purchase.item.name %></p>
 <% end %>
+
