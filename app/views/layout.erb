@@ -5,16 +5,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/style.css">
   </head>
-  <body> 
+  <body>
     <div class="container">
       <h1>Welcome to the Flatiron Swag Store!</h1>
 
       <% if signed_in? %>
-        <p><%= current_user.name %></a> | <a href="/sign-out">Sign Out</a></p>
+        <p><%= current_user.name %></a> | <a href="/logout">Sign Out</a></p>
       <% elsif !@signin_page %>
-        <a href="/sign-in">Sign In</a>
+        <a href="/login">Sign In</a>
       <% end %>
-      
+
       <%= yield %>
 
       <div class="footer">

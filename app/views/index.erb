@@ -1,7 +1,7 @@
 <div class="error"><p><%= session[:error] %></p></div>
 
 <h3>Sign In</h3>
-<form action="/sign-in" method="POST">
+<form action="/login" method="POST">
   <p>Name: <input type="text" name="name"></p>
   <p>Email: <input type="text" name="email"></p>
   <input class="btn btn-primary" type="submit">
@@ -9,7 +9,7 @@
 </br>
 
 <h3>Sign Up</h3>
-<form action="/sign-up" method="POST">
+<form action="/signup" method="POST">
   <p>Name: <input type="text" name="name"></p>
   <p>Email: <input type="text" name="email"></p>
   <input class="btn btn-primary" type="submit">

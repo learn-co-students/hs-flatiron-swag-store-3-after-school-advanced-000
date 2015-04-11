@@ -25,7 +25,7 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/' do
-    erb :index  
+    erb :index
   end
 
   get '/items' do
@@ -41,18 +41,18 @@ class ApplicationController < Sinatra::Base
       item.count -= quantity.to_i
       item.save
       if quantity.to_i > 0
-        @total += item.price 
+        @total += item.price
         Purchase.create(user_id: @user.id, item_id: item.id)
       end
     end
     erb :confirmation
   end
 
-  get '/sign-in' do
-    erb :signin
+  get '/login' do
+    erb :index
   end
 
-  post '/sign-in' do
+  post '/login' do
     @user = User.find_by(:email => params[:email], :name => params[:name])
     if @user
       session[:user_id] = @user.id
@@ -60,16 +60,16 @@ class ApplicationController < Sinatra::Base
     redirect '/items'
   end
 
-  post '/sign-up' do
+  post '/signup' do
     @user = User.find_by(:email => params[:email], :name => params[:name])
     if !@user
-      User.create(:email => params[:email], :name => params[:name])
+      @user = User.create(:email => params[:email], :name => params[:name])
     end
     session[:user_id] = @user.id
     redirect '/items'
   end
 
-  get '/sign-out' do
+  get '/logout' do
     session[:user_id] = nil
     session[:error] = nil
     redirect '/items'
