@@ -11,7 +11,8 @@ type: challenges
 2. Run `shotgun` in your terminal
 3. Sign up for an account
 4. Purchase some stuff
-Pair up with a partner to talk through what each piece of the application does.
+
+Pair up with a partner to talk through how the application works and what each line of code is doing.
 
 
 
